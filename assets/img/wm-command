@@ -1,0 +1,117 @@
+
+Steps :
+==============
+
+1. Shelve if any local changes.
+2. Stop all tomcat instances.
+3. git fetch
+4. Unshelve if any local changes.
+5. Main build (mvn)
+6. Start tomcat instances.
+
+/*Run this file to update wmcodebase*/
+
+ 1978  cd Installations/
+ 1979  ls
+ 1980  cd studio_setup/
+ 1981  ls
+ 1982  cd shortcuts/
+ 1983  ls
+ 1984  cd unix/
+ 1985  ls
+ 1986  clear
+ 1987  ./git_fetch.sh 
+
+/*Run this file to start wm desktop version*/
+ 1977  ./tstart.sh 
+
+/*When more than one person works on the same page/line use this code to avoid conflicts and commit your changes*/
+
+ 1978  cd Documents/wavemaker/WaveMaker-Studio-Enterprise/
+ 1979  git pull --rebase wmgit master
+ 1980  cd wavemaker-studio
+ 1981  git pull --rebase wmgit master
+ 1982  cd wavemaker-app-runtime/
+ 1983  git pull --rebase wmgit master
+ 1984  cd ../wavemaker-studio-editor/
+ 1985  git pull --rebase wmgit master
+ 1986  cd ../wavemaker-studio-artifacts/
+ 1987  git pull --rebase wmgit master
+ 1988  cd ../wavemaker-studio-commons/
+ 1989  git pull --rebase wmgit master
+ 1990  cd ../../wavemaker-studio-saas-artifacts/
+ 1991  git pull --rebase wmgit master
+ 1992  clear
+ 1993  cd ../..
+ 1994  cd WaveMaker-Studio-Enterprise/
+ 1995  cd wavemaker-studio
+ 1996  clear
+ 1997  mvn clean install -DskipTests
+ 1998  cd wavemaker-studio-editor/
+ 1999  ant dev-build
+
+ant dev-build -Dwm_studio_build_type=local -Dproject.props.file=../../build-helpers/filters/saas-wmstudio-local.props
+ant prepare-client-side-files
+
+/*command to get the process details after*/
+
+ 1978  ps -ef|grep java
+ 1979  ps -ef|grep webstorm
+ 1980  clear
+ 1981  ps -ef|grep webstorm
+ 1982  sudo kill -9 6246
+/*to get the details of the last process that we ran on the machine*/
+!ps
+
+ 1983  git stash
+ 1984  git pull wmgit master
+ 1985  git stash pop
+ 1986  cd ..
+
+git reset --hard wmgit/master
+
+/* To view changes*/
+ 1994  cd WaveMaker-Studio-Enterprise/
+ 1995  cd wavemaker-studio
+ 1996  clear
+ 1997  mvn clean install -DskipTests
+ 1998  cd wavemaker-studio-editor/
+ 1999  ant dev-build
+ 2000  history
+ 2001  clear
+ 2002  ant dev-build
+ 2003  ls
+ 2004  cd ..
+ 2005  mvn -Pwmstudio-local clean install -DskipTests -Dproject.props.file=../../build-helpers/filters/saas-wmstudio-local.props
+mvn -Pwmstudio-local clean install -DskipTests -Dproject.props.file=../../build-helpers/filters/saas-wmstudio-local.props
+
+
+ 2097  git checkout -b restService
+ 2098  git commit -am "test"
+ 2099  git checkout master
+ 2100  git branch -D restService 
+
+
+/*wavemaker studio*/
+
+wm-studio .wm-studio-dialog .app-dialog-body .col-xs-2,
+
+
+/*push*/
+commit from webstorm.
+in that repo.. check git log for ur commit.
+git pull --rebase wmgit master
+git push wmgit
+
+git fetch http://wmgit.pramati.com/wavemaker-ng-runtime/refs/changes/27/38227/22
+
+git fetch http://wmgit.pramati.com/WaveMaker-Studio refs/changes/43/13343/2 && git cherry-pick FETCH_HEAD
+
+git fetch http://wmgit.pramati.com/WaveMaker-Studio refs/changes/37/16237/6 && git cherry-pick FETCH_HEAD
+
+  "MESSAGE_NAVIGATION_HELP_TEXT_NONE": "No pagination will be provided.",
+    "MESSAGE_NAVIGATION_HELP_TEXT_BASIC": "This option gives a next and previous arrow along with the page numbers at the bottom of the page for pagination.",
+    "MESSAGE_NAVIGATION_HELP_TEXT_CLASSIC": "A pagination bar with total number of pages and number of items in the current page will be displayed.",
+    "MESSAGE_NAVIGATION_HELP_TEXT_PAGER": "This option gives a next and previous buttons at the bottom of the page for pagination.",
+    "MESSAGE_NAVIGATION_HELP_TEXT_INLINE": "This option gives a next and previous arrows at both the sides of the page for pagination, carousel style",
+    "MESSAGE_NAVIGATION_HELP_TEXT_SCROLL": "On the scroll over the list will cause the next page to load and display."
