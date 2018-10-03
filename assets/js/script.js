@@ -62,6 +62,7 @@ $(document).ready(function () {
     //
     //
     // });
+
     $('ul.filter-btn-group li').click(function(){
         var tab_id = $(this).attr('data-tab');
 
@@ -70,39 +71,7 @@ $(document).ready(function () {
 
         $(this).addClass('active');
         $("#"+tab_id).addClass('active');
-    })
-
-    $("#central-coffee").click(function() {
-        var url="https://codepen.io/soujanyaj/project/full/XGovBM/";
-        setHREF(url);
     });
-    $("#signup-mordern").click(function() {
-        var url="https://jscodebit.gitlab.io/signup-mordern/";
-        setHREF(url);
-    });
-    $("#gradient-login").click(function() {
-        var url="https://jscodebit.gitlab.io/gradient-login/";
-        setHREF(url);
-    });
-    $("#grid-gallery").click(function() {
-        var url="https://jscodebit.neocities.org/";
-        setHREF(url);
-    });
-    $("#looper").click(function() {
-        var url="https://looper-particles.000webhostapp.com/";
-        setHREF(url);
-    });
-    $("#restful-api").click(function() {
-        var url="https://restful-api-jscodebit.herokuapp.com/";
-        setHREF(url);
-    });
-
-
-    function setHREF(url) {
-        window.open(url,'_blank');
-    }
-
-
     /*
      ----------------------------------------------------------------------
      Preloader

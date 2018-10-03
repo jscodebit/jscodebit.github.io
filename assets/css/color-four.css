@@ -695,7 +695,8 @@ ul li {
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out; }
 .portfolio-section .filter-btn-group .filter:hover {
-    color: #dce453; }
+    color: #dce453;
+    cursor: pointer;}
 .portfolio-section .filter-btn-group .active {
     border-bottom: 1px solid #dce453;
     color: #02263e; }
@@ -781,42 +782,98 @@ ul li {
     margin-right: 10px;
     margin-bottom: 10px;
 }
+.portfolio-section .popup-content:after{
+    display: block;
+    background-color: rgba(0, 0, 0, 0.8);
+    content: "";
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    z-index: 1;
+}
 .portfolio-section .popup-content img {
     width: 100%;
     height: 100%;
 }
-.portfolio-section .popup-content:hover .hover-content {
-    visibility: visible;
-    background-color: rgba(0, 0, 0, 0.8); }
-.portfolio-section .popup-content:hover .project-link {
+.portfolio-section .popup-content .popup-content-link:before {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.8);
+    content: "";
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    z-index: 1;
+}
+.portfolio-section .popup-content:hover .popup-content-link:before {
+   opacity: 1;
+   visibility: visible;
+}
+.portfolio-section .popup-content .popup-content-link + .project-link {
+    display: block;
+    color: #dce453;
+    box-shadow: 0 0 0 2px #dce453;
+    border-radius: 50%;
+    height: 4.2rem;
+    width: 4.2rem;
+    text-align: center;
+    z-index: 500;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translate3d(0, -100%, 0);
+    -ms-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+}
+.portfolio-section .popup-content:hover .popup-content-link + .project-link {
     opacity: 1;
     visibility: visible;
     -webkit-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
 }
-.portfolio-section .popup-content:hover .project-link i {
+.portfolio-section .popup-content:hover .popup-content-link + .project-link:hover {
+    cursor: pointer;
+}
+.portfolio-section .popup-content .popup-content-link + .project-link i {
     font-size: 1.8rem;
     line-height: 4.2rem;
 }
-.portfolio-section .popup-content .hover-content .project-description {
+.portfolio-section .popup-content .project-description {
     position: absolute;
     left: 0;
-    bottom: 0.9rem;
+    bottom: 1.5rem;
     padding: 0 3.3rem 0 2rem;
     z-index: 2;
     opacity: 0;
     visibility: hidden;
+    -webkit-transform: translate3d(0, 100%, 0);
+    -ms-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
-.portfolio-section .popup-content:hover .hover-content .project-description {
+.portfolio-section .popup-content:hover .project-description {
     opacity: 1;
     visibility: visible;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
-.portfolio-section .popup-content:hover .hover-content .project-description h3 {
+.portfolio-section .popup-content .project-description h3 {
     font-size: 1.4rem;
     line-height: 1.286;
     color: #FFFFFF;
@@ -824,7 +881,7 @@ ul li {
     letter-spacing: .2rem;
     margin: 0 0 .3rem 0;
 }
-.portfolio-section .popup-content:hover .hover-content .project-description p {
+.portfolio-section .popup-content .project-description p {
     color: rgba(255, 255, 255, 0.5) !important;
     font-size: 1.4rem;
     line-height: 1.714;
@@ -1295,7 +1352,7 @@ ul li {
     z-index: 999999999;
     background-color: white;
     text-align: center;
-    background-image: url("../../version-four/assets/img/loading_pencil.gif");
+    background-image: url("../img/loading_pencil.gif");
     background-repeat: no-repeat;
     background-position: center; }
 
