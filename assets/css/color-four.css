@@ -869,6 +869,9 @@ ul li {
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
+.portfolio-section .popup-content:hover .popup-content-link {
+    cursor: auto;
+}
 .portfolio-section .popup-content:hover .project-description {
     opacity: 1;
     visibility: visible;
