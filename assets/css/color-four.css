@@ -30,6 +30,9 @@ Author:	UKIE WEB
 
 body {
     display: none; }
+.ng-hide {
+    opacity: 1 !important;
+}
 
 a {
     color: #02263e;
