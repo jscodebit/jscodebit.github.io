@@ -2,7 +2,7 @@
 
 Template: My Desktop
 Version: 1.0
-Author:	UKIE WEB
+Author:	Soujanya Janapatla
 
     - General setting
     - Home | #header
@@ -13,12 +13,6 @@ Author:	UKIE WEB
     - Blog | #blog-section
     - Contacts | #contact-section
     - Copyright | #footer-copyright
-
-    - Animationload
-    - Animated setting
-    - Blog Page
-    - Blog Post
-    - Page 404
 
 ================================================ */
 /* ------------------
@@ -1185,8 +1179,8 @@ ul li {
 }
 .social-icons a i {
     position: relative;
-    font-size: 1.9em;
-    top: 8px;
+    font-size: 1.8em;
+    top: 10px;
 }
 
 /*-----------------------
